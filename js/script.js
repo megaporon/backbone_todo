@@ -7,14 +7,15 @@
 		},
 		validate: function(attrs) {
 			if( _.isEmpty(attrs.title) ){
-				return 'ないで';
+				return 'todoを入力して下さい';
 			}
 		},
 		initialize: function () {
 			this.on('invalid', function(model, error) {
 				$('#error').html(error);
 			})
-		}
+		},
+		localStorage: new Store("todos")
 	});
 	var Tasks = Backbone.Collection.extend({ model: Task });
 
@@ -32,7 +33,7 @@
 			this.model.set('completed', !this.model.get('completed'));
 		},
 		destroy: function() {
-			if (confirm('ほんとにけす？')) {
+			if (confirm('todoを削除しますか？')) {
 				this.model.destroy();
 			}
 		},

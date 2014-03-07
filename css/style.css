@@ -1,0 +1,77 @@
+
+
+.todo__title {
+	padding: 20px;
+	color: #fff;
+	background-color: #61ced2;
+	font-size: 20px;
+	font-weight: normal;	
+	text-align: center;
+}
+
+.todo__text-area {
+	display: inline-block;
+	width: 100%;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.todo__text-form {
+	-webkit-appearance: none;
+	width: 80%;
+	height: 30px;
+	border: #999 solid 1px;
+	border-radius: 5px;
+}
+
+.todo__add-btn {
+	width: 15%;
+	height: 34px;
+	border: #999 solid 1px;
+	border-radius: 5px;
+	color: #999;
+	background-color: #fff;
+}
+
+li {
+	padding: 10px;
+	border-top: 1px solid #999;
+}
+
+li:last-child {
+	border-bottom: 1px solid #999;
+}
+
+.todo__other-tasks {
+	margin: 20px 0 0 20px;
+	color: #999;
+}
+
+.todo__error-text {
+	display: block;
+	margin-bottom: 20px;
+	color: #ff5775;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.ico_close {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	background-image: url('../img/ico_close.png');
+	background-size: 15px 15px;
+	vertical-align: -2px;
+}
+
+.completed {
+	color: #fff;
+	background-color: #999;
+}
+
+.done {
+	color: #fff;
+	background-color: gray;
+}

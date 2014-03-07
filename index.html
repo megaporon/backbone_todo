@@ -3,39 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		.completed {
-			text-decoration: line-through;
-			color: gray;
-		}
-	</style>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="todo-wrapper">
+		<h1 class="todo__title">Todo List</h1>
+		<form id="addTask">
+			<div class="todo__text-area">
+				<input class="todo__text-form" type="text" id="title">
+				<input class="todo__add-btn" type="submit" value="add">
+			</div>
+			
+			<span id="error" class="todo__error-text"></span>
+		</form>
 
-	<h1>Tasks</h1>
+		<div id="tasks"></div>
 
-	<form id="addTask">
-		<input type="text" id="title">
-		<input type="submit" value="add">
-		<span id="error"></span>
-	</form>
+		<p class="todo__other-tasks">残り：<span id="count"></span></p>
 
-	<div id="tasks">
+		<script type="text/template" id="task-template">
+			<input type="checkbox" class="toggle" <%= completed ? 'checked': ''%>>
+			<span class="<%= completed ? 'completed' : ''%>">
+				<%- title %>
+			</span>
+			<span class="delete"><i class="ico_close"></i></span>
+		</script>
 	</div>
-
-	<p>のこり：<span id="count"></span></p>
-
-	<script type="text/template" id="task-template">
-		<input type="checkbox" class="toggle" <%= completed ? 'checked': ''%>>
-		<span class="<%= completed ? 'completed' : ''%>">
-			<%- title %>
-		</span>
-		<span class="delete">[X]</span>
-	</script>
 	
 <script src="js/underscore.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/backbone.js"></script>
+<script src="js/backbone.localStorage-min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
